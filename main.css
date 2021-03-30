@@ -1,0 +1,119 @@
+
+body {
+    margin:0px; /*removes default margin in browser*/
+    background-color:blanchedalmond;
+    color:grey;
+}
+
+* {
+    box-sizing:border-box;
+    border-spacing: 0ch;
+}
+
+
+   /*All columns float to the left*/
+  [class*="col-"] {
+    float: left;
+    padding: 0px;
+    border: 1px solid red;
+  } 
+
+  /*columns inside rows float to the left, to prevent them taken out of the flow page use this code */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  /* Default appearance of screen with size not bigger than 480 px
+  Standard resolution mobile - Portrait
+  iPhone X / Pixel 2*/
+
+  .logo { /*logo*/
+    max-width:7%;
+    height:auto;
+}
+
+  img { /*Images*/
+        width:100%; /*image will never scale up larger than its size*/
+        height:auto; /*height will adjust according to width to be responsive*/
+  }
+
+  .grid-container{
+      display:grid;
+      grid-template-rows: auto;
+
+  }
+
+  .text-container h5{
+    padding:1em;
+    font-size: 17px;
+    font-style: normal;
+    font-family: monospace;
+  }
+
+  .footer{
+      background-color:lightsalmon;
+
+  }
+  .footer h5{
+      color:white;
+      text-align:center;
+      padding: 2em 0.5em;
+  }
+
+ 
+/*Small tablet - Portrait
+  Nexus 7 / Nexus 10*/
+@media screen and (min-width:481px) and (max-width:1023px) and (orientation: portrait){
+    .grid-container{
+        display:grid;
+        grid-template-columns: auto auto; /*2 columns per row*/
+    
+    }
+
+    .logo { /*logo*/
+        max-width:8%;
+        height:auto;
+    }
+}
+
+@media screen and (min-width:481px) and (max-width:1023px) and (orientation: landscape){
+  .grid-container{
+      display:grid;
+      grid-template-columns: auto auto; /*2 columns per row*/
+
+  }
+
+  .logo { /*logo*/
+      max-width:8%;
+      height:auto;
+  }
+}
+
+/*Small tablet - Landscape
+  iPad*/
+@media only screen and (min-width:1024px) and (orientation: landscape){
+    .grid-container{
+       display:grid;
+        grid-template-columns: auto auto auto; /*3 columns per row*/
+    }
+
+    .logo { /*logo*/
+        max-width:5%;
+        height:auto;
+    }
+}
+
+/*Desktop / Laptop - Landscape*/
+  @media screen and (min-width:1025px) and (orientation: landscape){
+    .grid-container{
+      display:grid;
+        grid-template-columns: auto auto auto; /*3 columns per row*/
+    }
+    .logo { /*logo*/
+        max-width:5%;
+        height:auto;
+    }
+}
+
